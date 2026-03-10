@@ -24,13 +24,23 @@ colcon build --packages-select vfh_avoidance
 source install/setup.bash
 
 # Quick Start
-1.Launch your simulation (e.g., WPR_Simulation2):
+1.Your project structrue should be like this
+vfh_avoidance/
+├── CMakeLists.txt
+├── package.xml
+├── src/
+│   └── vfh_node.cpp       # Core VFH logic & ROS 2 wrapper
+└── README.md
+wpr_simulation2/
+...
+
+2.Launch your simulation (e.g., WPR_Simulation2):
 ros2 launch wpr_simulation2 world.launch.py
 
-2.Run the VFH Node:
+3.Run the VFH Node:
 ros2 run vfh_avoidance vfh_node
 
-3.Command the Robot:
+4.Command the Robot:
 Use the 2D Goal Pose tool in RViz2 to set a destination. The robot will autonomously navigate while dodging static and dynamic obstacles.
 
 # Algorithm Overview
